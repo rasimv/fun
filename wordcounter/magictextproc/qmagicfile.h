@@ -28,7 +28,7 @@ public:
     Q_INVOKABLE QString preview() const;
 
 private:
-	void readInit();
+    void readInit();
 
     Encoding m_enc;
     std::vector<char> m_data;

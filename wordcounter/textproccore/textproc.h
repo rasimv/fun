@@ -117,8 +117,8 @@ private:
     void switchSub();
 
     void proc();
-	bool readXoe(const std::shared_ptr<SharedData> &a_sharedDataSP, size_t a_switch);
-	void readX(const std::shared_ptr<SharedData> &a_sharedDataSP);
+    bool readXoe(const std::shared_ptr<SharedData> &a_sharedDataSP, size_t a_switch);
+    void readX(const std::shared_ptr<SharedData> &a_sharedDataSP);
     void read(const std::shared_ptr<SharedData> &a_sharedDataSP);
 
     std::atomic_size_t m_uniqCount;

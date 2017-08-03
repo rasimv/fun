@@ -70,7 +70,7 @@ QString QMagicFile::preview() const
 
 void QMagicFile::readInit()
 {
-	assert(m_file != nullptr);
-	m_file->clear();
-	m_file->seekg(m_enc == E_UTF8 || m_enc == E_UTF16LE || m_enc == E_UTF16BE ? m_bomSkip : 0);
+    assert(m_file != nullptr);
+    m_file->clear();
+    m_file->seekg(m_enc == E_UTF8 || m_enc == E_UTF16LE || m_enc == E_UTF16BE ? m_bomSkip : 0);
 }

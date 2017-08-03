@@ -27,10 +27,10 @@ TextProc::TextProc(size_t a_subBufSize, size_t a_wordBufSize, EncParams &a_encPa
 
 TextProc::~TextProc()
 {
-	assert(m_sharedDataSP != nullptr);
-	m_sharedDataSP->m_shutdown = true;
-	m_sharedDataSP->m_sub1cvProc.notify_one();
-	m_sharedDataSP->m_sub1cvRead.notify_one();
+    assert(m_sharedDataSP != nullptr);
+    m_sharedDataSP->m_shutdown = true;
+    m_sharedDataSP->m_sub1cvProc.notify_one();
+    m_sharedDataSP->m_sub1cvRead.notify_one();
     m_sharedDataSP->m_sub2cvProc.notify_one();
     m_sharedDataSP->m_sub2cvRead.notify_one();
     m_proc.join();
@@ -230,7 +230,7 @@ void TextProc::proc()
         if (m_sharedDataSP->m_proc == S_DEFAULT) m_sharedDataSP->m_proc = S_PREFIN;
     }
     catch (const std::exception &) { m_sharedDataSP->m_proc = S_ERR_PREFIN; }
-	try { if (m_done != nullptr) m_done(this); } catch (const std::exception &) {}
+    try { if (m_done != nullptr) m_done(this); } catch (const std::exception &) {}
 }
 
 bool TextProc::readXoe(const std::shared_ptr<SharedData> &a_sharedDataSP, size_t a_switch)

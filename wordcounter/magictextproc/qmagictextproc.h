@@ -10,42 +10,42 @@
 
 class QBuildConfig : public QObject
 {
-	Q_OBJECT
+    Q_OBJECT
 public: Q_INVOKABLE QString decor(const QString &a);
 };
 
 class QMagicTextProc : public QObject
 {
     Q_OBJECT
-	Q_ENUMS(StatIndex)
+    Q_ENUMS(StatIndex)
 
 public:
-	enum StatIndex { SI_UNIQ_COUNT = 0, SI_LINE_COUNT, SI_WORD_COUNT };
+    enum StatIndex { SI_UNIQ_COUNT = 0, SI_LINE_COUNT, SI_WORD_COUNT };
 
-	QMagicTextProc(QObject *a = nullptr);
+    QMagicTextProc(QObject *a = nullptr);
     ~QMagicTextProc();
 
     QMagicTextProc(const QMagicTextProc &) = delete;
     QMagicTextProc &operator =(const QMagicTextProc &) = delete;
 
     Q_INVOKABLE void go(QMagicFile *a);
-	Q_INVOKABLE QStringList notSyncStat();
+    Q_INVOKABLE QStringList notSyncStat();
 
     static void initialize();
 
 signals:
-	void doneIntermed();
-	void done();
+    void doneIntermed();
+    void done();
 
-private slots:
-	void onDoneIntermed();
+    private slots:
+    void onDoneIntermed();
 
 private:
-	TextProc::EncParams makeLatin1();
-	TextProc::EncParams makeLocal8();
-	TextProc::EncParams makeUtf(TextProc::Encoding a_enc);
+    TextProc::EncParams makeLatin1();
+    TextProc::EncParams makeLocal8();
+    TextProc::EncParams makeUtf(TextProc::Encoding a_enc);
 
-	void callbackDone(void *a);
+    void callbackDone(void *a);
 
     std::unique_ptr<TextProc> m_core;
     static aux8bit::S8bit s_latin1, s_local8;
