@@ -9,47 +9,47 @@ Item
 
     property var m_magicTextProc;
 
-	function go(a_magicFile)
-	{
-		m_magicTextProc = Qt.createQmlObject(
-			'import io.qt.examples.magictextproc 1.0
-			QMagicTextProc
-			{
-				onDone:
-				{
-					id_t_main.running = false;
-					statistics();
-					id_b_okOrCancel.text = "ok";
-				}
-			}'
-			, id_i_2nd);
-		m_magicTextProc.go(a_magicFile);
-		id_b_okOrCancel.enabled = true;
-		id_t_main.running = true;
+    function go(a_magicFile)
+    {
+        m_magicTextProc = Qt.createQmlObject(
+            'import io.qt.examples.magictextproc 1.0
+            QMagicTextProc
+            {
+                onDone:
+                {
+                    id_t_main.running = false;
+                    statistics();
+                    id_b_okOrCancel.text = "ok";
+                }
+            }'
+            , id_i_2nd);
+        m_magicTextProc.go(a_magicFile);
+        id_b_okOrCancel.enabled = true;
+        id_t_main.running = true;
+    }
+
+    function statistics()
+    {
+        if (typeof m_magicTextProc === "undefined") return;
+        var l_list = m_magicTextProc.notSyncStat();
+        id_l_lineCount.text = l_list[QMagicTextProc.SI_LINE_COUNT];
+        id_l_uniqCount.text = l_list[QMagicTextProc.SI_UNIQ_COUNT];
+        id_l_wordCount.text = l_list[QMagicTextProc.SI_WORD_COUNT];
+    }
+
+    function zeroStat()
+    {
+        id_l_lineCount.text = "0";
+        id_l_uniqCount.text = "0";
+        id_l_wordCount.text = "0";
 	}
 
-	function statistics()
-	{
-		if (typeof m_magicTextProc === "undefined") return;
-		var l_list = m_magicTextProc.notSyncStat();
-		id_l_lineCount.text = l_list[QMagicTextProc.SI_LINE_COUNT];
-		id_l_uniqCount.text = l_list[QMagicTextProc.SI_UNIQ_COUNT];
-		id_l_wordCount.text = l_list[QMagicTextProc.SI_WORD_COUNT];
-	}
-
-	function zeroStat()
-	{
-		id_l_lineCount.text = "0";
-		id_l_uniqCount.text = "0";
-		id_l_wordCount.text = "0";
-	}
-
-	Timer
-	{
-		id: id_t_main
-		interval: 30; running: false; repeat: true
-		onTriggered: { statistics(); }
-	}
+    Timer
+    {
+        id: id_t_main
+        interval: 30; running: false; repeat: true
+        onTriggered: { statistics(); }
+    }
 
     ColumnLayout
     {
@@ -82,7 +82,6 @@ Item
                         Label { text: "Line count:" }
                         Label { text: "Word count:" }
                         Label { text: "Total word count:" }
-
                     }
 
                     ColumnLayout
@@ -111,24 +110,24 @@ Item
 
             Button
             {
-				id: id_b_okOrCancel
-				enabled: false
+                id: id_b_okOrCancel
+                enabled: false
                 text: "cancel"
 
-				onClicked:
-				{
-					enabled = false;
-					text = "cancel";
-					zeroStat();
+                onClicked:
+                {
+                    enabled = false;
+                    text = "cancel";
+                    zeroStat();
 
-					var l_null;
-					var l_magicTextProc = m_magicTextProc;
-					m_magicTextProc = l_null;
-					l_magicTextProc.destroy();
+                    var l_null;
+                    var l_magicTextProc = m_magicTextProc;
+                    m_magicTextProc = l_null;
+                    l_magicTextProc.destroy();
 
-					id_sw_main.currentIndex = 0;
-					m_page1.procOk();
-				}
+                    id_sw_main.currentIndex = 0;
+                    m_page1.procOk();
+                }
             }
 
             Item { width: 0.1 }

@@ -10,12 +10,12 @@ Item
 
     property var m_magicFile;
 
-	function procOk()
-	{
-		id_b_chooseFile.enabled = true;
-		id_cb_encoding.enabled = true;
-		id_b_go.enabled = true;
-	}
+    function procOk()
+    {
+        id_b_chooseFile.enabled = true;
+        id_cb_encoding.enabled = true;
+        id_b_go.enabled = true;
+    }
 
     ColumnLayout
     {
@@ -82,7 +82,7 @@ Item
                 id: id_cb_encoding
                 enabled: false
                 model: ["latin1", "local8", "utf8", "utf16le", "utf16be"]
-				currentIndex: 1
+                currentIndex: 1
                 onActivated:
                 {
                     if (currentIndex == 1) m_magicFile.setEnc(QMagicFile.E_LOCAL8);
@@ -105,8 +105,8 @@ Item
                     id_b_chooseFile.enabled = false;
                     id_cb_encoding.enabled = false;
                     enabled = false;
-					id_sw_main.currentIndex = 1;
-					m_page2.go(m_magicFile);
+                    id_sw_main.currentIndex = 1;
+                    m_page2.go(m_magicFile);
                 }
             }
 
@@ -127,10 +127,10 @@ Item
             if (typeof m_magicFile !== "undefined") m_magicFile.destroy();
             m_magicFile = Qt.createQmlObject('import io.qt.examples.magictextproc 1.0; QMagicFile {}', id_i_1st);
             if (!m_magicFile.open(fileUrl))
-			{
-				id_cb_encoding.enabled = false;
-				id_b_go.enabled = false;
-				id_ta_preview.text = "";
+            {
+                id_cb_encoding.enabled = false;
+                id_b_go.enabled = false;
+                id_ta_preview.text = "";
                 return;
 			}
             var l_enc = m_magicFile.enc();

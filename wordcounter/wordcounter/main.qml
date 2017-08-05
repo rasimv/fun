@@ -9,13 +9,13 @@ ApplicationWindow
     height: 480
     visible: true
 
-	QBuildConfig { id: id_qbc }
-	title: id_qbc.decor("Word counter")
+    QBuildConfig { id: id_qbc }
+    title: id_qbc.decor("Word counter")
 
-	property var m_page1;
-	property var m_page2;
+    property var m_page1;
+    property var m_page2;
 
-	SwipeView
+    SwipeView
     {
         id: id_sw_main
         anchors.fill: parent
