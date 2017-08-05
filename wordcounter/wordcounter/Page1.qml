@@ -132,7 +132,7 @@ Item
                 id_b_go.enabled = false;
                 id_ta_preview.text = "";
                 return;
-			}
+            }
             var l_enc = m_magicFile.enc();
             if (l_enc === QMagicFile.E_LOCAL8) id_cb_encoding.currentIndex = 1;
             else if (l_enc === QMagicFile.E_UTF8) id_cb_encoding.currentIndex = 2;
