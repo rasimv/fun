@@ -1,4 +1,4 @@
-#include "vertex.h"
+﻿#include "vertex.h"
 
 GLuint loadShader(GLenum a_shaderType, const char *a_source)
 {

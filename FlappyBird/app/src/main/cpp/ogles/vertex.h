@@ -1,4 +1,4 @@
-#ifndef __OGLES_VERTEX_H
+﻿#ifndef __OGLES_VERTEX_H
 #define __OGLES_VERTEX_H
 
 #include <GLES2/gl2.h>

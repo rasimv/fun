@@ -1,4 +1,4 @@
-#include "../game/core.h"
+﻿#include "../game/core.h"
 #include <cassert>
 #include "coredd.h"
 #include "dcimpl.h"
@@ -43,7 +43,7 @@ namespace Game
         assert(dynamic_cast<DCImpl *>(a_dc) != nullptr && dynamic_cast<CoreDD *>(a_dd) != nullptr);
         DCImpl *const l_dc = static_cast<DCImpl *>(a_dc);
         CoreDD *const l_dd = static_cast<CoreDD *>(a_dd);
-        char l_t[20] = {0};
+        char l_t[20] = { 0 };
         const int l_s = ::sprintf(l_t, "%ld", m_score);
         //Ширина символа будет 1/14 ширины всей области отображения,
         //высота символа - 1/20 высоты всей области отображения

@@ -42,7 +42,7 @@ Item
         id_l_lineCount.text = "0";
         id_l_uniqCount.text = "0";
         id_l_wordCount.text = "0";
-	}
+    }
 
     Timer
     {

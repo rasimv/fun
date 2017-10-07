@@ -1,4 +1,4 @@
-#include "game.h"
+﻿#include "game.h"
 #include "game/defs.h"
 #include <cassert>
 #include "game/core.h"

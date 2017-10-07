@@ -4,7 +4,7 @@
 namespace Game
 {
     CoreDD::CoreDD()
-        :m_bufIDs{(GLuint)-1}, m_rectBuf(0)
+        :m_bufIDs{ (GLuint)-1 }, m_rectBuf(0)
     {}
 
     void CoreDD::init(DCImpl *a)

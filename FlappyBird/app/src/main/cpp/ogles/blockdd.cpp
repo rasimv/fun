@@ -14,7 +14,8 @@ namespace Game
     {
         ::glBindBuffer(GL_ARRAY_BUFFER, m_buf);
         //Вершины треугольников составляющих квадрат
-        static const Vertex s_rectTri[] = {
+        static const Vertex s_rectTri[] =
+            {
                 { -1, -1, 0, 0.6f, 0 }, { 1, -1, 0, 0.6f, 0 }, { 1, 1, 0, 0.6f, 0 },
                 { -1, -1, 0, 0.6f, 0 }, { 1, 1, 0, 0.6f, 0 }, { -1, 1, 0, 0.6f, 0 }
             };

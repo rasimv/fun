@@ -1,4 +1,4 @@
-#ifndef __FLAPPYBIRD_GAME_H
+﻿#ifndef __FLAPPYBIRD_GAME_H
 #define __FLAPPYBIRD_GAME_H
 
 #include <jni.h>

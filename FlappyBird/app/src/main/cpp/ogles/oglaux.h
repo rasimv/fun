@@ -1,4 +1,4 @@
-#ifndef __OGLES_OGLAUX_H
+﻿#ifndef __OGLES_OGLAUX_H
 #define __OGLES_OGLAUX_H
 
 #include "vertex.h"
