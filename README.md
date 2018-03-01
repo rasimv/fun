@@ -1,2 +1,1 @@
 - FlappyBird is a minimalistic Flappy Bird-like game for Android
-- wordcounter is a window application (trash) which finds number of the unique words in the text file
